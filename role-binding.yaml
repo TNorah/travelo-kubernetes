@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: travelo-reader-binding
+subjects:
+  - kind: ServiceAccount
+    name: travelo-reader
+    namespace: travelo
+roleRef:
+  kind: Role
+  name: travelo-pod-reader
+  apiGroup: rbac.authorization.k8s.io
